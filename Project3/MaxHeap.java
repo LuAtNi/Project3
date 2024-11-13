@@ -120,4 +120,11 @@ public final class MaxHeap<T extends Comparable<? super T>>
       heap[rootIndex] = orphan;
    } // end reheap
 
+   private void sequentialInsertion(T newEntry){
+      for (int i = 0; i < lastIndex; i++)
+      {
+         add(newEntry);
+      } //end whilie loop
+   }
+
 } // end MaxHeap
