@@ -48,13 +48,23 @@ public final class MaxHeap<T extends Comparable<? super T>>
       heap[newIndex] = newEntry;
       lastIndex++;
       checkCapacity();
-   // See Segment 27.8.
    } // end add
 
    public T removeMax()
    {
-   // See Segment 27.12. 
+      T root = null;
+      if (!isEmpty()){
+         root = heap[1];
+         heap[1] = heap[lastIndex];
+         lastIndex--;
+         reheap(1);
+      }
+      return root;
    } // end removeMax
+
+   private void reheap(int rootIndex){
+      //reheap method
+   }
 
    public T getMax()
    {
