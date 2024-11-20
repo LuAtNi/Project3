@@ -101,6 +101,18 @@ public final class MaxHeap<T extends Comparable<? super T>>
    
 // Private methods
 
+   private void checkIntegrity(){
+      if(!integrityOK){
+         throw new SecurityException("MaxHeap object is corrupt");
+      }
+   }
+
+   private void checkCapacity(int capacity){
+      if (capacity > MAX_CAPACITY){
+         throw new IllegalStateException("Heap exceeds maximum capacity");
+      }
+   }
+
    private void reheap(int rootIndex){
       boolean done = false;
       T orphan = heap[rootIndex];
