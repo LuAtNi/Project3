@@ -47,6 +47,17 @@ public final class MaxHeap<T extends Comparable<? super T>>
       } //end whilie loop
    }
 
+   public void optimalInsertion(T[] newEntry){
+
+      int swaps = 0; 
+
+      for (int index = 0; index < newEntry.length; index++)
+         heap[index + 1] = newEntry[index];
+
+      for (int rootIndex = lastIndex / 2; rootIndex > 0; rootIndex--)
+         swaps = reheap(rootIndex) + swaps;
+   }
+
    public int add(T newEntry)
    {
       int swaps = 0;
@@ -121,7 +132,9 @@ public final class MaxHeap<T extends Comparable<? super T>>
       }
    }
 
-   private void reheap(int rootIndex){
+   private int reheap(int rootIndex){
+
+      int swaps = 0;
       boolean done = false;
       T orphan = heap[rootIndex];
       int leftChildIndex = 2 * rootIndex;
@@ -140,11 +153,13 @@ public final class MaxHeap<T extends Comparable<? super T>>
             heap[rootIndex] = heap[largerChildIndex];
             rootIndex = largerChildIndex;
             leftChildIndex = 2 * rootIndex;
+            swaps++;
          }
          else
             done = true;
       } // end while
       heap[rootIndex] = orphan;
+      return swaps;
    } // end reheap
 
 } // end MaxHeap
