@@ -36,6 +36,13 @@ public final class MaxHeap<T extends Comparable<? super T>>
       integrityOK = true;
    } // end constructor
 
+   public void sequentialInsertion(T newEntry){
+      for (int i = 0; i < lastIndex; i++)
+      {
+         add(newEntry);
+      } //end whilie loop
+   }
+
    public void add(T newEntry)
    {
       int newIndex = lastIndex + 1;
@@ -119,12 +126,5 @@ public final class MaxHeap<T extends Comparable<? super T>>
       } // end while
       heap[rootIndex] = orphan;
    } // end reheap
-
-   private void sequentialInsertion(T newEntry){
-      for (int i = 0; i < lastIndex; i++)
-      {
-         add(newEntry);
-      } //end whilie loop
-   }
 
 } // end MaxHeap
