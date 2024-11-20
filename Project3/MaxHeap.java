@@ -71,7 +71,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
       }
       heap[newIndex] = newEntry;
       lastIndex++;
-      checkCapacity();
+      checkCapacity(lastIndex);
 
       return swaps;
    } // end add
