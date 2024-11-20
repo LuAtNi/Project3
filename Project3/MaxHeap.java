@@ -14,6 +14,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
    private boolean integrityOK = false;
 	private static final int DEFAULT_CAPACITY = 25;
 	private static final int MAX_CAPACITY = 10000;
+   private int swaps = 0;
    
    public MaxHeap()
    {
@@ -117,6 +118,11 @@ public final class MaxHeap<T extends Comparable<? super T>>
       } // end while
       lastIndex = 0;
    } // end clear
+
+   public int getSwaps(){
+      return swaps;
+   }
+
    
 // Private methods
 

@@ -27,6 +27,23 @@ public class HeapOutput {
         return result;
 
     }
+
+    public static void printSwaps(MaxHeap<Integer> heap, String fileName) throws IOException {
+        
+        File file = new File (fileName);
+
+        if (heap != null && file.exists()){
+            int numSwaps = heap.getSwaps();
+
+            FileWriter appendFile = new FileWriter(fileName, true);
+            PrintWriter outputFile = new PrintWriter(appendFile);
+
+            outputFile.println("Number of swaps: " + numSwaps);
+
+            outputFile.close();
+        }
+    }
+
     public static void main(String[] args){
         
     }
