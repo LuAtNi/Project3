@@ -125,7 +125,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public T getter(int index){
       if (index > 0 && index <= lastIndex){
-         return heap[index]''
+         return heap[index];
       }
       else 
          return null;
