@@ -44,6 +44,10 @@ public class HeapOutput {
         }
     }
 
+    //Athena: print remove 10
+    //Nikhita: print sequential heap
+    //Lucia: print optimal heap
+
     public static void main(String[] args){
         
     }
