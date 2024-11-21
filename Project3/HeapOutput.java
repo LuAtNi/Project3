@@ -38,7 +38,7 @@ public class HeapOutput {
             FileWriter appendFile = new FileWriter(fileName, true);
             PrintWriter outputFile = new PrintWriter(appendFile);
 
-            outputFile.println("Number of swaps: " + numSwaps);
+            outputFile.println("Number of swaps in the heap creation: " + numSwaps);
 
             outputFile.close();
         }
