@@ -123,6 +123,14 @@ public final class MaxHeap<T extends Comparable<? super T>>
       return swaps;
    }
 
+   public T getter(int index){
+      if (index > 0 && index <= lastIndex){
+         return heap[index]''
+      }
+      else 
+         return null;
+   }
+
    
 // Private methods
 
@@ -137,6 +145,8 @@ public final class MaxHeap<T extends Comparable<? super T>>
          throw new IllegalStateException("Heap exceeds maximum capacity");
       }
    }
+
+   
 
    private int reheap(int rootIndex){
 

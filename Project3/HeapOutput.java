@@ -44,9 +44,46 @@ public class HeapOutput {
         }
     }
 
+
     //Athena: print remove 10
     //Nikhita: print sequential heap
     //Lucia: print optimal heap
+
+    public static void remove10(MaxHeap<Integer> heap) {
+        for (int i = 0; i < 10;i++) {
+            heap.removeMax();
+        }
+    }
+
+    public static void printRemove10(MaxHeap<Integer> heap, String fileName) throws IOException {
+        File file = new File (fileName);
+
+        remove10(heap);
+
+        if (heap != null && file.exists())
+        {
+            FileWriter appendFile = new FileWriter(fileName, true);
+            PrintWriter outputFile = new PrintWriter(appendFile);
+
+            outputFile.println("Heap after 10 removals: ");
+            for(int i = 1; i < heap.getSize() + 1; i++) {
+                outputFile.print(heap.getter(i) + ",");
+                if (i == 25) {
+                    outputFile.println();
+                } 
+                else if (i == 50) 
+                {
+                    outputFile.println();
+                }
+                else if (i == 75)
+                {
+                        outputFile.println();
+                }
+            }
+            outputFile.close();
+        }
+    }  
+    
 
     public static void main(String[] args){
         
