@@ -55,6 +55,22 @@ public class HeapOutput {
         }
     }
 
+    public static void printOptimal(MaxHeap<Integer> heap, String fileName) throws IOException {
+        File optimalFile = new File(fileName);
+        Integer[] optimalFileArr = readInts(fileName);
+
+        if(heap != null && optimalFile.exists()){
+            FileWriter appendFile = new FileWriter(fileName, true);
+            PrintWriter outputFile = new PrintWriter(appendFile);
+
+            outputFile.print("Heap built using optimal method: ");
+            for(int i = 1; i < heap.getSize()-1; i++){
+                outputFile.print(heap.optimalInsertion(optimalFileArr[i]) + ", ");
+            }
+            outputFile.println();
+        }
+    }
+
     public static void printRemove10(MaxHeap<Integer> heap, String fileName) throws IOException {
         File file = new File (fileName);
 
