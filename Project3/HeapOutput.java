@@ -64,10 +64,14 @@ public class HeapOutput {
             PrintWriter outputFile = new PrintWriter(appendFile);
 
             outputFile.print("Heap built using optimal method: ");
-            for(int i = 1; i < heap.getSize()-1; i++){
-                outputFile.print(heap.optimalInsertion(optimalFileArr[i]) + ", ");
+            heap.optimalInsertion(optimalFileArr);
+            
+            for(int i = 1; i < heap.getSize(); i++){
+                outputFile.print(heap.getter(i) + ", ");
             }
+
             outputFile.println();
+            outputFile.close();
         }
     }
 
