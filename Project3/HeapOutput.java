@@ -55,8 +55,35 @@ public class HeapOutput {
         }
     }
 
+    public static void printSequential(MaxHeap<Integer> heap, String fileName) throws IOException {
+        
+        File file = new File(fileName);
+        Integer[] sequentialFileArr = readInts(fileName);
+
+        if(heap != null && file.exists()){
+
+            FileWriter appendFile = new FileWriter(fileName, true);
+            PrintWriter outputFile = new PrintWriter(appendFile);
+
+            outputFile.print("Heap built using sequential insertions: ");
+            heap.sequentialInsertion(sequentialFileArr);
+            
+            for (int i = 0; i < heap.getSize(); i++){
+
+                outputFile.print(heap.getter(i) + ", ");
+            }
+
+            outputFile.println();
+            outputFile.close();
+        }
+            
+        
+
+    }
+
     public static void printOptimal(MaxHeap<Integer> heap, String fileName) throws IOException {
-        File optimalFile = new File(fileName);
+        
+        File optimalFile = new File(fileName); //do we need to make this the same file instead of a separate optimal file? does it make no difference?
         Integer[] optimalFileArr = readInts(fileName);
 
         if(heap != null && optimalFile.exists()){

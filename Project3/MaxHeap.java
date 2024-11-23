@@ -37,15 +37,14 @@ public final class MaxHeap<T extends Comparable<? super T>>
       integrityOK = true;
    } // end constructor
 
-   public void sequentialInsertion(T newEntry){
+   public void sequentialInsertion(T[] newEntry){
 
       int swaps = 0; 
 
       for (int i = 0; i < lastIndex; i++)
       {
-
-         swaps = this.add(newEntry) + swaps;
-      } //end whilie loop
+         swaps = this.add(newEntry[i]) + swaps;
+      }
    }
 
    public void optimalInsertion(T[] newEntry){
@@ -60,17 +59,17 @@ public final class MaxHeap<T extends Comparable<? super T>>
    }
 
    public int add(T newEntry)
-   {
-      int swaps = 0;
-      int newIndex = lastIndex + 1;
-      int parentIndex = newIndex/2;
-      while ((parentIndex > 0) && newEntry.compareTo(heap[parentIndex])>0){
-         heap[newIndex] = heap[parentIndex];
-         newIndex = parentIndex;
-         parentIndex = newIndex/2;
-         swaps++;
-      }
-      heap[newIndex] = newEntry;
+      {
+         int swaps = 0;
+         int newIndex = lastIndex + 1;
+         int parentIndex = newIndex/2;
+         while ((parentIndex > 0) && newEntry.compareTo(heap[parentIndex])>0){
+            heap[newIndex] = heap[parentIndex];
+            newIndex = parentIndex;
+            parentIndex = newIndex/2;
+            swaps++;
+         }
+         heap[newIndex] = newEntry;
       lastIndex++;
       checkCapacity(lastIndex);
 
