@@ -134,13 +134,13 @@ public class HeapOutput {
 
     public static void main(String[] args) throws IOException {
 
-        PrintWriter outputFile = new PrintWriter("outputFile.java");
+        PrintWriter outputFile = new PrintWriter("outputFile.txt");
         outputFile.close();
 
         Integer[] heapArray = readInts("data_sorted.txt");
 
         for (int i = 0; i < 69; i++){
-            outputFile.println("=");
+            outputFile.print("=");
         }
         
     }
