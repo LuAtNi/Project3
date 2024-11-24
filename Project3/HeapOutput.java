@@ -71,23 +71,19 @@ public class HeapOutput {
 
             outputFile.println();
             outputFile.close();
-        }
-            
+        }    
         
-
     }
 
     public static void printOptimal(MaxHeap<Integer> heap, String fileName) throws IOException {
         
         File optimalFile = new File(fileName);
-        Integer[] optimalFileArr = readInts(fileName);
 
         if(heap != null && optimalFile.exists()){
             FileWriter appendFile = new FileWriter(fileName, true);
             PrintWriter outputFile = new PrintWriter(appendFile);
 
             outputFile.print("Heap built using optimal method: ");
-            //heap.optimalInsertion(optimalFileArr);
             
             for(int i = 1; i < heap.getSize(); i++){
                 outputFile.print(heap.getter(i) + ", ");
