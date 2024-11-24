@@ -6,6 +6,8 @@ import java.util.Arrays;
    @author Timothy M. Henry
    @version 5.0
 */
+
+//last sane commit
 public final class MaxHeap<T extends Comparable<? super T>>
              implements MaxHeapInterface<T>
 {
