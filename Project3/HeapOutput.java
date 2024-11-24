@@ -134,10 +134,30 @@ public class HeapOutput {
     
 
     public static void main(String[] args) throws IOException {
-        
+
+        File file = new File("data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
         Integer[] heapArray = readInts("data_sorted.txt");
+    
+        for (int i = 0; i < 69; i++) {
+            outputFile.print("="); 
+        }
+        outputFile.println();
+
+        MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
+        sequentialHeap.sequentialInsertion(heapArray);
+
+        printSequential(sequentialHeap, "data_sorted.txt");
+        printSwaps(sequentialHeap, "data_sorted.txt");
+        printRemove10(sequentialHeap, "data_sorted.txt");
+
+        MaxHeap<Integer> optimalHeap = new MaxHeap<>();
+        optimalHeap.optimalInsertion(heapArray);
+
+        printOptimal(optimalHeap,"data_sorted.txt");
+        printSwaps(optimalHeap, "data_sorted.txt");
+        printRemove10(optimalHeap, "data_sorted.txt");
 
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
@@ -145,7 +165,7 @@ public class HeapOutput {
         outputFile.println();
 
         outputFile.close();
-            
+        
     }
     
 }
