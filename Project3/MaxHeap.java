@@ -39,41 +39,44 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public void sequentialInsertion(T[] newEntry){
 
-      int swaps = 0; 
+      int tempSwaps = 0; 
 
       for (int i = 0; i < lastIndex; i++)
       {
-         swaps = this.add(newEntry[i]) + swaps;
+         tempSwaps = this.add(newEntry[i]) + tempSwaps;
       }
+      swaps = tempSwaps;
    }
 
    public void optimalInsertion(T[] newEntry){
 
-      int swaps = 0; 
+      int tempSwaps = 0; 
 
       for (int index = 0; index < newEntry.length; index++)
          heap[index + 1] = newEntry[index];
 
       for (int rootIndex = lastIndex / 2; rootIndex > 0; rootIndex--)
-         swaps = reheap(rootIndex) + swaps;
+         tempSwaps = reheap(rootIndex) + tempSwaps;
+      
+      swaps = tempSwaps;
    }
 
    public int add(T newEntry)
       {
-         int swaps = 0;
+         int tempSwaps = 0;
          int newIndex = lastIndex + 1;
          int parentIndex = newIndex/2;
          while ((parentIndex > 0) && newEntry.compareTo(heap[parentIndex])>0){
             heap[newIndex] = heap[parentIndex];
             newIndex = parentIndex;
             parentIndex = newIndex/2;
-            swaps++;
+            tempSwaps++;
          }
          heap[newIndex] = newEntry;
       lastIndex++;
       checkCapacity(lastIndex);
-
-      return swaps;
+      
+      return tempSwaps;
    } // end add
 
    public T removeMax()
@@ -149,7 +152,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    private int reheap(int rootIndex){
 
-      int swaps = 0;
+      int tempSwaps = 0;
       boolean done = false;
       T orphan = heap[rootIndex];
       int leftChildIndex = 2 * rootIndex;
@@ -168,13 +171,13 @@ public final class MaxHeap<T extends Comparable<? super T>>
             heap[rootIndex] = heap[largerChildIndex];
             rootIndex = largerChildIndex;
             leftChildIndex = 2 * rootIndex;
-            swaps++;
+            tempSwaps++;
          }
          else
             done = true;
       } // end while
       heap[rootIndex] = orphan;
-      return swaps;
+      return tempSwaps;
    } // end reheap
 
 } // end MaxHeap
