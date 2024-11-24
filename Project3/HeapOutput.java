@@ -83,7 +83,7 @@ public class HeapOutput {
 
     public static void printOptimal(MaxHeap<Integer> heap, String fileName) throws IOException {
         
-        File optimalFile = new File(fileName); //do we need to make this the same file instead of a separate optimal file? does it make no difference?
+        File optimalFile = new File(fileName);
         Integer[] optimalFileArr = readInts(fileName);
 
         if(heap != null && optimalFile.exists()){
@@ -132,7 +132,16 @@ public class HeapOutput {
     }  
     
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
+
+        PrintWriter outputFile = new PrintWriter("outputFile.java");
+        outputFile.close();
+
+        Integer[] heapArray = readInts("data_sorted.txt");
+
+        for (int i = 0; i < 69; i++){
+            outputFile.println("=");
+        }
         
     }
     
