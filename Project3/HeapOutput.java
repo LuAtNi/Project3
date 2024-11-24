@@ -132,18 +132,23 @@ public class HeapOutput {
         }
     }  
     
-
-    public static void main(String[] args) throws IOException {
-
-        File file = new File("data_sorted.txt");
+    public static void printEquals(MaxHeap<Integer> heap, String fileName) throws IOException {
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        Integer[] heapArray = readInts("data_sorted.txt");
-    
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
         }
         outputFile.println();
+
+        outputFile.close();
+    }
+    public static void main(String[] args) throws IOException {
+
+        File file = new File("data_sorted.txt");
+        //PrintWriter outputFile = new PrintWriter("outputFile.txt");
+
+        Integer[] heapArray = readInts("data_sorted.txt");
+    
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
         sequentialHeap.sequentialInsertion(heapArray);
@@ -163,9 +168,7 @@ public class HeapOutput {
 
         printEquals(sequentialHeap, "outputFile.txt");
 
-        /*for (int i = 0; i < 69; i++) {
-            outputFile.print("="); 
-        }
+        /*
         outputFile.println();
 
         outputFile.close();*/
