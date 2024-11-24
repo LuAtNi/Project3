@@ -143,8 +143,7 @@ public class HeapOutput {
             outputFile.println();
 
             outputFile.close();
-            System.out.println("Successfully wrote to outputFile.txt");
-
+            
         } catch (FileNotFoundException e) {
             System.out.println("Error: Could not create output file. " + e.getMessage());
         }
