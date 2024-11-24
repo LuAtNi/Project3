@@ -132,21 +132,30 @@ public class HeapOutput {
         }
     }  
     
+    public static void printEquals(MaxHeap<Integer> heap, String filename) throws IOException
+    {
+        PrintWriter outputFile = new PrintWriter(filename);
 
-    public static void main(String[] args) throws IOException {
-
-        File file = new File("data_sorted.txt");
-        PrintWriter outputFile = new PrintWriter("outputFile.txt");
-
-        Integer[] heapArray = readInts("data_sorted.txt");
-    
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
         }
         outputFile.println();
 
+        outputFile.close();
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
+        //PrintWriter outputFile = new PrintWriter("outputFile.txt");
+
+        Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
+    
+
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
         sequentialHeap.sequentialInsertion(heapArray);
+
+        printEquals(sequentialHeap, "outputFile.txt");
 
         printSequential(sequentialHeap, "outputFile.txt");
         printSwaps(sequentialHeap, "outputFile.txt");
@@ -159,12 +168,14 @@ public class HeapOutput {
         printSwaps(optimalHeap, "outputFile.txt");
         printRemove10(optimalHeap, "outputFile.txt");
 
-        for (int i = 0; i < 69; i++) {
+        printEquals(sequentialHeap, "outputFile.txt");
+
+        /*for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
         }
         outputFile.println();
 
-        outputFile.close();
+        outputFile.close();*/
         
     }
     
