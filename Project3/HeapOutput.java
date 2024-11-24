@@ -20,7 +20,7 @@ public class HeapOutput {
 
             temp = scan.nextInt();
             result[i] = Integer.valueOf(temp);
-            System.out.println(result[i]);
+            //System.out.println(result[i]);
             i++;
        }
 
@@ -45,10 +45,6 @@ public class HeapOutput {
         }
     }
 
-
-    //Athena: print remove 10
-    //Nikhita: print sequential heap
-    //Lucia: print optimal heap
 
     public static void remove10(MaxHeap<Integer> heap) {
         for (int i = 0; i < 10;i++) {
@@ -132,8 +128,8 @@ public class HeapOutput {
         }
     }  
     
-    public static void printEquals(MaxHeap<Integer> heap, String fileName) throws IOException {
-        PrintWriter outputFile = new PrintWriter("outputFile.txt");
+    public static void printEquals(String fileName) throws IOException {
+        PrintWriter outputFile = new PrintWriter(fileName);
 
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
@@ -144,16 +140,16 @@ public class HeapOutput {
     }
     public static void main(String[] args) throws IOException {
 
-        File file = new File("data_sorted.txt");
+        File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
         //PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        Integer[] heapArray = readInts("data_sorted.txt");
+        Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
     
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
         sequentialHeap.sequentialInsertion(heapArray);
 
-        printEquals(sequentialHeap, "outputFile.txt");
+        printEquals("outputFile.txt");
 
         printSequential(sequentialHeap, "outputFile.txt");
         printSwaps(sequentialHeap, "outputFile.txt");
@@ -166,7 +162,7 @@ public class HeapOutput {
         printSwaps(optimalHeap, "outputFile.txt");
         printRemove10(optimalHeap, "outputFile.txt");
 
-        printEquals(sequentialHeap, "outputFile.txt");
+        printEquals("outputFile.txt");
 
         /*
         outputFile.println();
