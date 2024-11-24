@@ -137,6 +137,8 @@ public class HeapOutput {
         
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
+        Integer[] heapArray = readInts("data_sorted.txt");
+
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
         }
