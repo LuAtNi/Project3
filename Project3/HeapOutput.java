@@ -134,20 +134,16 @@ public class HeapOutput {
     
 
     public static void main(String[] args) throws IOException {
+        
+        PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        try {
-            PrintWriter outputFile = new PrintWriter("outputFile.txt");
-
-            for (int i = 0; i < 69; i++) {
-                outputFile.print("="); 
-            }
-            outputFile.println();
-
-            outputFile.close();
-            
-        } catch (FileNotFoundException e) {
-            System.out.println("Error: Could not create output file. " + e.getMessage());
+        for (int i = 0; i < 69; i++) {
+            outputFile.print("="); 
         }
+        outputFile.println();
+
+        outputFile.close();
+            
     }
     
 }
