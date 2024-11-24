@@ -135,7 +135,7 @@ public class HeapOutput {
 
     public static void main(String[] args) throws IOException {
 
-        File file = new File("data_sorted.txt");
+        //File file = new File("data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
         Integer[] heapArray = readInts("data_sorted.txt");
@@ -144,6 +144,7 @@ public class HeapOutput {
             outputFile.print("="); 
         }
         outputFile.println();
+        outputFile.flush(); 
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
         sequentialHeap.sequentialInsertion(heapArray);
