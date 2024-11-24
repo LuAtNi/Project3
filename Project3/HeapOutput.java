@@ -148,16 +148,16 @@ public class HeapOutput {
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
         sequentialHeap.sequentialInsertion(heapArray);
 
-        printSequential(sequentialHeap, "data_sorted.txt");
-        printSwaps(sequentialHeap, "data_sorted.txt");
-        printRemove10(sequentialHeap, "data_sorted.txt");
+        printSequential(sequentialHeap, "outputFile.txt");
+        printSwaps(sequentialHeap, "outputFile.txt");
+        printRemove10(sequentialHeap, "outputFile.txt");
 
         MaxHeap<Integer> optimalHeap = new MaxHeap<>();
         optimalHeap.optimalInsertion(heapArray);
 
-        printOptimal(optimalHeap,"data_sorted.txt");
-        printSwaps(optimalHeap, "data_sorted.txt");
-        printRemove10(optimalHeap, "data_sorted.txt");
+        printOptimal(optimalHeap,"outputFile.txt");
+        printSwaps(optimalHeap, "outputFile.txt");
+        printRemove10(optimalHeap, "outputFile.txt");
 
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
