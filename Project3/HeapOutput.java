@@ -20,6 +20,7 @@ public class HeapOutput {
 
             temp = scan.nextInt();
             result[i] = Integer.valueOf(temp);
+            System.out.println(result[i]);
             i++;
        }
 
