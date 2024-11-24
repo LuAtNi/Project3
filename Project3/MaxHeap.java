@@ -52,7 +52,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
       int tempSwaps = 0; 
 
-      for (int index = 0; index < newEntry.length; index++)
+      for (int index = 0; index < lastIndex; index++)
          heap[index + 1] = newEntry[index];
 
       for (int rootIndex = lastIndex / 2; rootIndex > 0; rootIndex--)

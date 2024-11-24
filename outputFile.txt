@@ -1,4 +1,1 @@
 =====================================================================
-Heap built using sequential insertions: 
-Number of swaps in the heap creation: 0
-Heap after 10 removals: 
