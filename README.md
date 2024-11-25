@@ -14,3 +14,6 @@ GitHub Usernames:<br />
 lmaturinoi<br />
 AthenaBallensky<br />
 nikhithavasiraju<br />
+
+Contributions: <br />
+Athena: wrote the remove10, printRemove10, getter, checkIntegrity(), and checkCapacity methods; fixed critical empty array error
