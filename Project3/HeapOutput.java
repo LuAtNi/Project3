@@ -7,6 +7,12 @@ import java.io.PrintWriter;
 
 public class HeapOutput {
 
+    /**
+    * Reads integers from a file (data_sorted.txt) and puts them into an array
+    * @param fileName Name of the file where the integers will be read from
+    * @return Returns an array of integers
+    * @throws FileNotFoundException
+    */
     public static Integer[] readInts(String fileName) throws FileNotFoundException 
     {
 
@@ -30,6 +36,12 @@ public class HeapOutput {
 
     }
 
+    /**
+    * Prints the number of swaps that occur when changing a heap
+    * @param heap The heap the swaps are being calculated from
+    * @param fileName The file that the output will be printed into
+    * @throws IOException
+    */
     public static void printSwaps(MaxHeap<Integer> heap, String fileName) throws IOException 
     {
         
@@ -48,7 +60,10 @@ public class HeapOutput {
         }
     }
 
-
+    /**
+    * Peforms the removal of 10 inetgers from the heap
+    * @param heap The max heap that the integers are being removed from
+    */
     public static void remove10(MaxHeap<Integer> heap) 
     {
         for (int i = 0; i < 10;i++) 
@@ -57,6 +72,12 @@ public class HeapOutput {
         }
     }
 
+    /**
+    * Prints the resulting heap created with the sequential insertion method into an output file
+    * @param heap The heap that is being printed
+    * @param fileName The file that this heap will be printed into
+    * @throws IOException
+    */
     public static void printSequential(MaxHeap<Integer> heap, String fileName) throws IOException 
     {
         
@@ -84,6 +105,12 @@ public class HeapOutput {
         
     }
 
+    /**
+    * Prints the resulting heap created with the optimal insertion method into an output file
+    * @param heap The heap that is being printed 
+    * @param fileName The file that this heap will be printed into
+    * @throws IOException
+    */
     public static void printOptimal(MaxHeap<Integer> heap, String fileName) throws IOException 
     {
         
@@ -106,6 +133,12 @@ public class HeapOutput {
         }
     }
 
+    /**
+    * Prints the resulting heap after removing 10 integers (after performing remove10() method)
+    * @param heap The heap that is being printed 
+    * @param fileName The file that this heap will be printed into
+    * @throws IOException
+    */
     public static void printRemove10(MaxHeap<Integer> heap, String fileName) throws IOException 
     {
         File file = new File (fileName);
@@ -128,6 +161,11 @@ public class HeapOutput {
         }
     }  
     
+    /**
+    * Prints a line of 69 equals signs which are used as borders
+    * @param fileName The file that the border will be printed into
+    * @throws IOException
+    */
     public static void printEquals(String fileName) throws IOException 
     {
         
@@ -144,6 +182,7 @@ public class HeapOutput {
         outputFile.close();
     }
 
+    //WHAT IS THIS FOR
     public static void printLine(String fileName) throws IOException 
     {
     
@@ -153,8 +192,6 @@ public class HeapOutput {
 
         outputFile.close();
     }
-
-    
 
     public static void main(String[] args) throws IOException 
     {
