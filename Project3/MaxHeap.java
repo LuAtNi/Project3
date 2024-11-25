@@ -6,7 +6,6 @@
    @version 5.0
 */
 
-//last sane commit
 public final class MaxHeap<T extends Comparable<? super T>>
              implements MaxHeapInterface<T>
 {
@@ -17,6 +16,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 	private static final int MAX_CAPACITY = 10000;
    private int swaps = 0;
    
+   //Default constructor
    public MaxHeap()
    {
       this(DEFAULT_CAPACITY); // Call next constructor
@@ -38,6 +38,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
       integrityOK = true;
    } // end constructor
 
+    /**
+    * Builds a max heap using sequential insertions
+    * @param newEntry The array that will hold the heap
+    */
    public void sequentialInsertion(T[] newEntry)
    {
 
@@ -50,6 +54,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
       swaps = tempSwaps;
    }
 
+   /**
+    * Builds a max heap using optimal insertions
+    * @param newEntry The array that will hold the heap
+    */
    public void optimalInsertion(T[] newEntry)
    {
 
@@ -65,6 +73,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
       swaps = tempSwaps;
    }
 
+   /**
+    * Adds a new elements to a heap
+    * @param newEntry The new element that will be added to the heap
+    */
    public int add(T newEntry)
    {
          int tempSwaps = 0;
@@ -84,6 +96,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
       return tempSwaps;
    } // end add
 
+   /**
+    * Removes the highest root of the heap and adjusts the rest of the heap using the reheap method
+    * @return The new root after readjusting the heap
+    */
    public T removeMax()
    {
       T root = null;
@@ -97,6 +113,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
       return root;
    } // end removeMax
 
+   /**
+    * Gives the value of the current root of a heap
+    * @return The value of the highest root
+    */
    public T getMax()
    {
 		checkIntegrity();
@@ -106,16 +126,19 @@ public final class MaxHeap<T extends Comparable<? super T>>
       return root;
    } // end getMax
 
+   
    public boolean isEmpty()
    {
       return lastIndex < 1;
    } // end isEmpty
 
+   
    public int getSize()
    {
       return lastIndex;
    } // end getSize
 
+   
    public void clear()
    {
 		checkIntegrity();
@@ -132,6 +155,11 @@ public final class MaxHeap<T extends Comparable<? super T>>
       return swaps;
    }
 
+   /**
+    * Gets the value of a specific index
+    * @param index The index we are getting the value for
+    * @return The value identified
+    */
    public T getter(int index){
       if (index > 0 && index <= lastIndex)
       {
@@ -144,6 +172,9 @@ public final class MaxHeap<T extends Comparable<? super T>>
    
 // Private methods
 
+   /**
+    * Checks that the integrity is maintained, throws exception if is it not
+    */
    private void checkIntegrity()
    {
       if(!integrityOK)
@@ -152,6 +183,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
       }
    }
 
+   /**
+    * Checks to see if the maxiumum capacity is reached, throws exception if it is
+    * @param capacity Integer that represents the capacity
+    */
    private void checkCapacity(int capacity)
    {
       if (capacity > MAX_CAPACITY)
@@ -160,8 +195,11 @@ public final class MaxHeap<T extends Comparable<? super T>>
       }
    }
 
-   
-
+   /**
+    * Adjusts the subtress after its root is removed
+    * @param rootIndex The root whos subtree is being adjusted
+    * @return Integer that represents the number of swaps that occured when adjusting the heap
+    */
    private int reheap(int rootIndex)
    {
 

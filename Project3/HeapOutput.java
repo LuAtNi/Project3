@@ -182,17 +182,6 @@ public class HeapOutput {
         outputFile.close();
     }
 
-    //WHAT IS THIS FOR
-    public static void printLine(String fileName) throws IOException 
-    {
-    
-        PrintWriter outputFile = new PrintWriter(fileName);
-
-        outputFile.println();
-
-        outputFile.close();
-    }
-
     public static void main(String[] args) throws IOException 
     {
 
