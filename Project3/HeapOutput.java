@@ -137,7 +137,7 @@ public class HeapOutput {
         outputFile.close();
     }
 
-    public static void printOutputToFile(MaxHeap<Integer> heap, String filename) throws IOException
+    /*public static void printOutputToFile(MaxHeap<Integer> heap, String filename) throws IOException
     {
         File myFile = new File(filename);
         if (myFile.exists())
@@ -192,9 +192,9 @@ public class HeapOutput {
         MaxHeap<Integer> smartHeap = new MaxHeap<>();
         smartHeap.optimalInsertion(testVals1);
 
-    }
+    }*/
     
-    /*public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
         //File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
@@ -211,6 +211,8 @@ public class HeapOutput {
         printSwaps(sequentialHeap, "outputFile.txt");
         printRemove10(sequentialHeap, "outputFile.txt");
 
+        outputFile.println();
+
         MaxHeap<Integer> optimalHeap = new MaxHeap<>();
         optimalHeap.optimalInsertion(heapArray);
 
@@ -225,6 +227,6 @@ public class HeapOutput {
 
         outputFile.close();
         
-    }*/
+    }
     
 }

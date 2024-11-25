@@ -41,9 +41,10 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public void sequentialInsertion(T[] newEntry){
 
+      //lastIndex = newEntry.length;
       int tempSwaps = 0; 
-
-      for (int i = 0; i < lastIndex; i++)
+   
+      for (int i = 0; i < newEntry.length; i++)
       {
          tempSwaps = this.add(newEntry[i]) + tempSwaps;
          //heap[i + 1] = newEntry[i];
@@ -53,6 +54,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public void optimalInsertion(T[] newEntry){
 
+      lastIndex = newEntry.length;
       int tempSwaps = 0; 
 
       for (int index = 0; index < lastIndex; index++)
