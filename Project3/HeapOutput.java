@@ -105,7 +105,7 @@ public class HeapOutput {
             FileWriter appendFile = new FileWriter(fileName, true);
             PrintWriter outputFile = new PrintWriter(appendFile);
 
-            outputFile.println("Heap after 10 removals: ");
+            outputFile.print("Heap after 10 removals: ");
             for(int i = 1; i < 11; i++) {
                 outputFile.print(heap.getter(i) + ", ");
                 /*if (i == 25) {
@@ -120,8 +120,8 @@ public class HeapOutput {
                         outputFile.println();
                 }*/
             }
-            outputFile.print("...");
-            outputFile.println();
+            outputFile.println("...");
+            outputFile.println("");
             outputFile.close();
         }
     }  
@@ -135,7 +135,8 @@ public class HeapOutput {
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
         }
-        outputFile.println();
+        outputFile.println("");
+        outputFile.println("");
         
         outputFile.close();
     }
@@ -212,7 +213,7 @@ public class HeapOutput {
         //File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
+        Integer[] heapArray = readInts("C:\\Users\\lmatu\\OneDrive\\Documents\\GitHub\\Project3\\Project3\\data_sorted.txt");
     
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
