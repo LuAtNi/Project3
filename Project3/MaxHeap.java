@@ -1,4 +1,3 @@
-import java.util.Arrays;
 /**
    A class that implements the ADT maxheap by using an array.
  

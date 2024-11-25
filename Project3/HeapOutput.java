@@ -125,7 +125,9 @@ public class HeapOutput {
     }  
     
     public static void printEquals(String fileName) throws IOException {
-        PrintWriter outputFile = new PrintWriter(fileName);
+        
+        FileWriter appendFile = new FileWriter(fileName, true);
+        PrintWriter outputFile = new PrintWriter(appendFile);
 
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
