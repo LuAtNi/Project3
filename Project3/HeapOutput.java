@@ -64,11 +64,12 @@ public class HeapOutput {
 
             outputFile.print("Heap built using sequential insertions: ");
             
-            for (int i = 1; i < heap.getSize(); i++){
+            for (int i = 1; i < 11; i++){
 
                 outputFile.print(heap.getter(i) + ", ");
             }
 
+            outputFile.print("...");
             outputFile.println();
             outputFile.close();
         }    
@@ -85,10 +86,10 @@ public class HeapOutput {
 
             outputFile.print("Heap built using optimal method: ");
             
-            for(int i = 1; i < heap.getSize(); i++){
+            for(int i = 1; i < 11; i++){
                 outputFile.print(heap.getter(i) + ", ");
             }
-
+            outputFile.print("...");
             outputFile.println();
             outputFile.close();
         }
@@ -105,9 +106,9 @@ public class HeapOutput {
             PrintWriter outputFile = new PrintWriter(appendFile);
 
             outputFile.println("Heap after 10 removals: ");
-            for(int i = 1; i < heap.getSize() + 1; i++) {
-                outputFile.print(heap.getter(i) + ",");
-                if (i == 25) {
+            for(int i = 1; i < 11; i++) {
+                outputFile.print(heap.getter(i) + ", ");
+                /*if (i == 25) {
                     outputFile.println();
                 } 
                 else if (i == 50) 
@@ -117,14 +118,16 @@ public class HeapOutput {
                 else if (i == 75)
                 {
                         outputFile.println();
-                }
+                }*/
             }
+            outputFile.print("...");
             outputFile.println();
             outputFile.close();
         }
     }  
     
-    public static void printEquals(String fileName) throws IOException {
+    public static void printEquals(String fileName) throws IOException 
+    {
         
         FileWriter appendFile = new FileWriter(fileName, true);
         PrintWriter outputFile = new PrintWriter(appendFile);
@@ -132,6 +135,16 @@ public class HeapOutput {
         for (int i = 0; i < 69; i++) {
             outputFile.print("="); 
         }
+        outputFile.println();
+        
+        outputFile.close();
+    }
+
+    public static void printLine(String fileName) throws IOException 
+    {
+        //FileWriter appendFile = new FileWriter(fileName, true);
+        PrintWriter outputFile = new PrintWriter(fileName);
+
         outputFile.println();
 
         outputFile.close();
@@ -199,7 +212,7 @@ public class HeapOutput {
         //File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        Integer[] heapArray = readInts("C:\\Users\\lmatu\\OneDrive\\Documents\\GitHub\\Project3\\Project3\\data_sorted.txt");
+        Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
     
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
@@ -211,7 +224,8 @@ public class HeapOutput {
         printSwaps(sequentialHeap, "outputFile.txt");
         printRemove10(sequentialHeap, "outputFile.txt");
 
-        outputFile.println();
+        //printLine("outputFile.txt");
+        //outputFile.println();
 
         MaxHeap<Integer> optimalHeap = new MaxHeap<>();
         optimalHeap.optimalInsertion(heapArray);
@@ -223,7 +237,7 @@ public class HeapOutput {
         printEquals("outputFile.txt");
 
         
-        outputFile.println();
+        //outputFile.println();
 
         outputFile.close();
         
