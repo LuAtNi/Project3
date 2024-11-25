@@ -97,7 +97,7 @@ public class HeapOutput {
     public static void printRemove10(MaxHeap<Integer> heap, String fileName) throws IOException {
         File file = new File (fileName);
 
-        //remove10(heap);
+        remove10(heap);
 
         if (heap != null && file.exists())
         {
@@ -199,7 +199,7 @@ public class HeapOutput {
         //File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
+        Integer[] heapArray = readInts("C:\\Users\\lmatu\\OneDrive\\Documents\\GitHub\\Project3\\Project3\\data_sorted.txt");
     
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
