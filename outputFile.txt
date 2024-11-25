@@ -1,8 +1,11 @@
-===================================================================
+=====================================================================
 Heap built using sequential insertions: 
+Heap built using optimal method: 
 Number of swaps in the heap creation: 0
 Heap after 10 removals: 
 
+
+Heap built using sequential insertions: 
 Heap built using optimal method: 
 Number of swaps in the heap creation: 0
 Heap after 10 removals: 

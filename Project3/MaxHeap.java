@@ -13,13 +13,14 @@ public final class MaxHeap<T extends Comparable<? super T>>
    private T[] heap;      // Array of heap entries; ignore heap[0]
    private int lastIndex; // Index of last entry and number of entries
    private boolean integrityOK = false;
-	private static final int DEFAULT_CAPACITY = 25;
+	private static final int DEFAULT_CAPACITY = 100;
 	private static final int MAX_CAPACITY = 10000;
    private int swaps = 0;
    
    public MaxHeap()
    {
       this(DEFAULT_CAPACITY); // Call next constructor
+      //this.heap = (T[]) new Comparable[100];
    } // end default constructor
    
    public MaxHeap(int initialCapacity)
@@ -45,6 +46,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
       for (int i = 0; i < lastIndex; i++)
       {
          tempSwaps = this.add(newEntry[i]) + tempSwaps;
+         //heap[i + 1] = newEntry[i];
       }
       swaps = tempSwaps;
    }

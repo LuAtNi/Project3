@@ -136,12 +136,70 @@ public class HeapOutput {
 
         outputFile.close();
     }
-    public static void main(String[] args) throws IOException {
+
+    public static void printOutputToFile(MaxHeap<Integer> heap, String filename) throws IOException
+    {
+        File myFile = new File(filename);
+        if (myFile.exists())
+        {
+            printSequential(heap, filename);
+            printOptimal(heap, filename);
+            printSwaps(heap, filename);
+            remove10(heap);
+            printRemove10(heap, filename);
+        }
+    }
+
+    public static void makeAFile(String filename) throws FileNotFoundException
+    {
+        PrintWriter outputFile = new PrintWriter(filename);
+        outputFile.close();
+    }
+
+    public static void main(String [] args) throws IOException{
+        String inputFile = "C:\\\\Users\\\\prize\\\\.vscode\\\\Project3\\\\Project3\\\\data_sorted.txt";
+        String outputFile = "outputFile.txt";
+
+        makeAFile(outputFile);
+
+        Integer[] heap = readInts(inputFile);
+
+        MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
+        sequentialHeap.sequentialInsertion(heap);
+
+        printEquals(outputFile);
+        printOutputToFile(sequentialHeap, outputFile);
+
+        File myFile = new File(outputFile);
+        if (myFile.exists())
+        {
+            FileWriter appendFile = new FileWriter(outputFile, true);
+            PrintWriter outputFileP = new PrintWriter(appendFile);
+            outputFileP.println();
+            outputFileP.close();
+        }
+
+        printOutputToFile(sequentialHeap, outputFile);
+        printEquals(outputFile);
+
+        Integer[] testVals = {20, 30, 40, 50};
+
+        MaxHeap<Integer> testHeap = new MaxHeap<>();
+        testHeap.optimalInsertion(testVals);
+
+        Integer[] testVals1 = {60, 70, 80, 90};
+
+        MaxHeap<Integer> smartHeap = new MaxHeap<>();
+        smartHeap.optimalInsertion(testVals1);
+
+    }
+    
+    /*public static void main(String[] args) throws IOException {
 
         //File file = new File("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
 
-        Integer[] heapArray = readInts("C:\\Users\\lmatu\\OneDrive\\Documents\\GitHub\\Project3\\Project3\\data_sorted.txt");
+        Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
     
 
         MaxHeap<Integer> sequentialHeap = new MaxHeap<>();
@@ -167,6 +225,6 @@ public class HeapOutput {
 
         outputFile.close();
         
-    }
+    }*/
     
 }
