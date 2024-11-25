@@ -20,7 +20,6 @@ public final class MaxHeap<T extends Comparable<? super T>>
    public MaxHeap()
    {
       this(DEFAULT_CAPACITY); // Call next constructor
-      //this.heap = (T[]) new Comparable[100];
    } // end default constructor
    
    public MaxHeap(int initialCapacity)
@@ -39,20 +38,20 @@ public final class MaxHeap<T extends Comparable<? super T>>
       integrityOK = true;
    } // end constructor
 
-   public void sequentialInsertion(T[] newEntry){
+   public void sequentialInsertion(T[] newEntry)
+   {
 
-      //lastIndex = newEntry.length;
       int tempSwaps = 0; 
    
       for (int i = 0; i < newEntry.length; i++)
       {
          tempSwaps = this.add(newEntry[i]) + tempSwaps;
-         //heap[i + 1] = newEntry[i];
       }
       swaps = tempSwaps;
    }
 
-   public void optimalInsertion(T[] newEntry){
+   public void optimalInsertion(T[] newEntry)
+   {
 
       lastIndex = newEntry.length;
       int tempSwaps = 0; 
@@ -67,11 +66,12 @@ public final class MaxHeap<T extends Comparable<? super T>>
    }
 
    public int add(T newEntry)
-      {
+   {
          int tempSwaps = 0;
          int newIndex = lastIndex + 1;
          int parentIndex = newIndex/2;
-         while ((parentIndex > 0) && newEntry.compareTo(heap[parentIndex])>0){
+         while ((parentIndex > 0) && newEntry.compareTo(heap[parentIndex])>0)
+         {
             heap[newIndex] = heap[parentIndex];
             newIndex = parentIndex;
             parentIndex = newIndex/2;
@@ -87,7 +87,8 @@ public final class MaxHeap<T extends Comparable<? super T>>
    public T removeMax()
    {
       T root = null;
-      if (!isEmpty()){
+      if (!isEmpty())
+      {
          root = heap[1];
          heap[1] = heap[lastIndex];
          lastIndex--;
@@ -126,12 +127,14 @@ public final class MaxHeap<T extends Comparable<? super T>>
       lastIndex = 0;
    } // end clear
 
-   public int getSwaps(){
+   public int getSwaps()
+   {
       return swaps;
    }
 
    public T getter(int index){
-      if (index > 0 && index <= lastIndex){
+      if (index > 0 && index <= lastIndex)
+      {
          return heap[index];
       }
       else 
@@ -141,21 +144,26 @@ public final class MaxHeap<T extends Comparable<? super T>>
    
 // Private methods
 
-   private void checkIntegrity(){
-      if(!integrityOK){
+   private void checkIntegrity()
+   {
+      if(!integrityOK)
+      {
          throw new SecurityException("MaxHeap object is corrupt");
       }
    }
 
-   private void checkCapacity(int capacity){
-      if (capacity > MAX_CAPACITY){
+   private void checkCapacity(int capacity)
+   {
+      if (capacity > MAX_CAPACITY)
+      {
          throw new IllegalStateException("Heap exceeds maximum capacity");
       }
    }
 
    
 
-   private int reheap(int rootIndex){
+   private int reheap(int rootIndex)
+   {
 
       int tempSwaps = 0;
       boolean done = false;
