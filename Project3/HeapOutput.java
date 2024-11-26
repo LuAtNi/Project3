@@ -187,7 +187,7 @@ public class HeapOutput {
 
     
         PrintWriter outputFile = new PrintWriter("outputFile.txt");
-
+        //File name should be updated according to input file on computer
         Integer[] heapArray = readInts("C:\\Users\\prize\\.vscode\\Project3\\Project3\\data_sorted.txt");
     
 
