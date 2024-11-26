@@ -22,5 +22,4 @@ Nikhitha: wrote sequentialInsertion, optimalInsertion, add, removeMax, and getSw
 
 Lucia: wrote printOptimal and helped with getSwaps for HeapOutput class and helped with optimalInsertion in MaxHeap class; fixed file and printing error <br />
 
-File path: <br />
-File name should be updated according to input file on computer <br />
+Note to Graders: To reference the data_sorted.txt file, I inserted the path of the file specific to my computer. If you would like to run the code, you must find the path for the input text file specific to your computer, and replace my path with your path in the main method of heapOutput.<br />
