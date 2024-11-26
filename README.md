@@ -17,5 +17,7 @@ nikhithavasiraju<br />
 
 Contributions: <br />
 Athena: wrote the remove10, printRemove10, getter, checkIntegrity(), and checkCapacity methods along with the main method; fixed critical empty array error <br />
+
 Nikhitha: wrote sequentialInsertion, optimalInsertion, add, removeMax, and getSwaps methods for MaxHeap class and readInts, printSwaps, printSequential, and main methods from HeapOutput class <br />
+
 Lucia: wrote printOptimal for HeapOutput class; fixed file and printing error <br />
