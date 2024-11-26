@@ -20,4 +20,7 @@ Athena: wrote the remove10, printRemove10, getter, checkIntegrity(), and checkCa
 
 Nikhitha: wrote sequentialInsertion, optimalInsertion, add, removeMax, and getSwaps methods for MaxHeap class and readInts, printSwaps, printSequential, and main methods from HeapOutput class <br />
 
-Lucia: wrote printOptimal for HeapOutput class; fixed file and printing error <br />
+Lucia: wrote printOptimal and helped with getSwaps for HeapOutput class and helped with optimalInsertion in MaxHeap class; fixed file and printing error <br />
+
+File path: <br />
+File name should be updated according to input file on computer <br />
